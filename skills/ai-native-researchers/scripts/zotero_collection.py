@@ -82,6 +82,9 @@ def index_status(path, block):
 
 
 def sync(collection, group, directory, counts, dry_run, index=None):
+    # Compare resolved paths on both sides of the vault containment check.
+    # Windows temp directories and vault junctions can have several spellings.
+    directory = directory.resolve()
     keys, collection_count = collect_keys(collection, group)
     scope = f"groups/{group}" if group else "library"
     owned = index_notes(directory, scope, set(keys))
@@ -131,7 +134,7 @@ def main():
     if not note.KEY.fullmatch(collection) or (args.group is not None and args.group < 1):
         parser.error("Expected an eight-character collection key and a positive group ID")
     try:
-        directory = args.out_dir.resolve()
+        directory = args.out_dir
         if directory.exists() and not directory.is_dir():
             raise ValueError(f"Expected a note directory: {directory}")
         sync(collection, args.group, directory, args.counts, args.dry_run, args.index)

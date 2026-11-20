@@ -49,7 +49,8 @@ class CollectionTests(unittest.TestCase):
         with renamed.open("ab") as stream:
             stream.write(b"\nMy interpretation.\n")
         original = renamed.read_bytes()
-        self.assertIn("created=1, updated=0, unchanged=1", self.sync(self.directory, dry_run=True))
+        alias = renamed.parent / ".."
+        self.assertIn("created=1, updated=0, unchanged=1", self.sync(alias, dry_run=True))
         self.assertFalse((self.directory / "index.md").exists())
         self.assertIn("items=2", self.sync(self.directory))
         self.assertEqual(renamed.read_bytes(), original)
