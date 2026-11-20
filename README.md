@@ -39,6 +39,8 @@ python examples/demo.py research-demo
 
 要把数字写回自己的项目，助手可以读本轮输出并填好阶段描述，然后执行[自动收尾命令](skills/ai-native-researchers/references/automation.md)。脚本从原编号接着排，让首页、判断、逐例表和文件指纹互相连通。重复执行会保留研究者的手写批注。完整做法见[技能正文](skills/ai-native-researchers/SKILL.md)。
 
+在 Zotero 加完一批论文后，[同步项目分类](skills/ai-native-researchers/references/library-sync.md)可一次读取子分类，更新 Obsidian 里的书目目录和阅读页。题录与 PDF 跳转直接来自本机 Zotero。需要导入划线原文时，再接 [ZotLit](skills/ai-native-researchers/references/literature.md)。
+
 ## 模型一代研究者怎么工作？
 
 研究者先说清想分辨的两种解释，以及什么观测会让自己改变判断。助手据此准备对照、运行分析、找出不符合预期的样本，把结论接回原始证据。换一个人接手时，他既能重复计算，也能看出上一次为什么作这个决定。
