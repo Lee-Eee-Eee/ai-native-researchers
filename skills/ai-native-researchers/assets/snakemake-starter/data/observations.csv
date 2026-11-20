@@ -1,0 +1,8 @@
+series,time_h,reading
+A,0,10
+B,0,9
+B,1,
+A,2,12.5
+B,4,13
+A,4,11
+B,3,13

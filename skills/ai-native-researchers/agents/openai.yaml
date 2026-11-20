@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Native Researchers"
+  short_description: "Connect experiments, evidence, papers and reproducible runs"
+  default_prompt: "Use $ai-native-researchers to turn this experiment into a reviewable milestone and verify its evidence."

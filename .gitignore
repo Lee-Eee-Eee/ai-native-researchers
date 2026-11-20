@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.snakemake/
+.venv/
+skills/ai-native-researchers/assets/snakemake-starter/results/

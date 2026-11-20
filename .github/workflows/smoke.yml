@@ -1,0 +1,46 @@
+name: Research workflow smoke test
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-stage:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the complete public example
+        run: python examples/demo.py demo-project
+      - name: Preserve a handwritten note and detect changed evidence
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          root = Path("demo-project")
+          note = root / "docs" / "001_observed-peaks.md"
+          with note.open("a", encoding="utf-8") as stream:
+              stream.write("\nHandwritten after the first run.\n")
+          before = {p: p.read_bytes() for p in [root / "README.md", *sorted((root / "docs").iterdir())]}
+          demo = [sys.executable, "examples/demo.py", str(root)]
+          subprocess.run(demo, check=True)
+          assert all(p.read_bytes() == data for p, data in before.items())
+
+          summary = root / "results" / "summary.csv"
+          with summary.open("ab") as stream:
+              stream.write(b"altered\n")
+          failed = subprocess.run(demo, capture_output=True, text=True)
+          assert failed.returncode and "Missing or modified: results/summary.csv" in failed.stderr, failed
+          assert summary.read_bytes().endswith(b"altered\n")

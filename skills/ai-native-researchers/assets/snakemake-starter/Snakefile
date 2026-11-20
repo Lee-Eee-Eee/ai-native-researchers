@@ -1,0 +1,23 @@
+rule all:
+    input:
+        "results/quality.json",
+        "results/summary.csv",
+
+
+rule check_observations:
+    input:
+        "data/observations.csv"
+    output:
+        observations="results/accepted.csv",
+        report="results/quality.json",
+    script:
+        "scripts/check_observations.py"
+
+
+rule summarize:
+    input:
+        "results/accepted.csv"
+    output:
+        "results/summary.csv"
+    script:
+        "scripts/summarize.py"
