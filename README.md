@@ -8,6 +8,8 @@
 
 在 Obsidian 里读阶段结论和逐例证据，在 Zotero 里找原文及批注，在 Git 里追踪代码和参数。已有多步计算时，Snakemake 负责按输入和输出的依赖重跑。普通 Markdown 编辑器也能打开所有项目笔记。技能默认用文件、CLI 和本地 API 在后台工作。
 
+个人日常使用一个 Obsidian 主库，每个项目在里面有自己的入口，共用搜索、快捷键和插件。从入口打开的阶段笔记就是原稿，批注直接写回同一份文件。各项目独立管理代码与计算结果；同一篇论文在 Zotero 里收录一次，可以加入多个项目分类。需要把整套笔记单独交给另一组人共同维护时，再开独立库。现有项目的接入和检查办法见[在主库审阅项目](skills/ai-native-researchers/references/review-vault.md)。
+
 ## 安装
 
 仓库中可安装的技能位于 [skills/ai-native-researchers](skills/ai-native-researchers/)。用 Codex 的技能安装器时，可以直接说：
