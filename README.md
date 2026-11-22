@@ -1,50 +1,53 @@
-# AI Native Researchers
+# 模型一代研究者
 
-让 AI 接手一个科研项目时，能沿着一条结论找到原始结果、运行方法和引用的论文。适合会反复改方法、做对照、写阶段报告的个人或小组。
+[English](README.en.md) · [安装](#安装) · [运行示例](#运行示例)
 
-给助手一句话就可以开始：
+**AI-Native Researchers** 是一套面向个人和小组的科研项目管理技能。我们想讨论一个具体的问题：**当模型能查文献、写代码、跑实验时，研究者该怎样组织项目，才能持续做出经得起复查的判断？**
 
-> 用 $ai-native-researchers 整理刚结束的实验。两种方法在哪些样本上有差别？把逐例结果连到阶段笔记，留下能重跑这一张表的命令。沿用我现在的目录。
+模型一代（AI-Native）研究者从研究设计开始就考虑怎样与模型协作。人决定什么问题值得做、什么结果会改变判断。模型和脚本整理文献、检查数据、运行对照、找出失败样本，再把结果连回出处。几个月后换一个人接手，他可以从一句结论找到相应的样本、数据版本、命令和论文，也能看出当时为什么这么判断。
 
-在 Obsidian 里读阶段结论和逐例证据，在 Zotero 里找原文及批注，在 Git 里追踪代码和参数。已有多步计算时，Snakemake 负责按输入和输出的依赖重跑。普通 Markdown 编辑器也能打开所有项目笔记。技能默认用文件、CLI 和本地 API 在后台工作。
+![合成观测示例。A 组在第 2 小时首达峰值，B 组在第 3 小时首达峰值；右侧展示判断页、证据页和复算方法。](docs/media/research-demo.png)
 
-个人日常使用一个 Obsidian 主库，每个项目在里面有自己的入口，共用搜索、快捷键和插件。从入口打开的阶段笔记就是原稿，批注直接写回同一份文件。各项目独立管理代码与计算结果；同一篇论文在 Zotero 里收录一次，可以加入多个项目分类。需要把整套笔记单独交给另一组人共同维护时，再开独立库。现有项目的接入和检查办法见[在主库审阅项目](skills/ai-native-researchers/references/review-vault.md)。
+## 一轮研究怎样留下来？
 
-## 安装
+1. **先写清要分辨什么。** 开跑前写下研究问题、对照条件和会改变判断的观测。让助手核对输入、样本划分和评价口径。
+2. **把判断和证据接在一起。** 每段实质进展留一对编号 Markdown。正文页写这次看出了什么，配套的 `a` 页记逐例结果、失败案例、分母和命令。两页从项目首页进入。
+3. **从结论走回数据和原文。** 让合作者顺着结果表复跑一次，或用独立实现复算关键数。用到某篇论文时，记下它支持哪句话，并连到具体章节、图表或批注。
 
-仓库中可安装的技能位于 [skills/ai-native-researchers](skills/ai-native-researchers/)。用 Codex 的技能安装器时，可以直接说：
+我们把这套分工当作 **AI 时代科研项目管理范式** 的起点。评价一次自动化有没有用，可以看它是否减少手工找文件、复制结果和交接时的重复解释，以及别人能否据此复核一项结论。 [研究者与模型如何分工](skills/ai-native-researchers/references/model-generation.md)
 
-> 请从 Lee-Eee-Eee/ai-native-researchers 安装 skills/ai-native-researchers。
+## 工具怎样各司其职？
 
-手动安装可以将这个子目录完整复制到 `~/.codex/skills/`，然后在新会话中使用 `$ai-native-researchers`。只做阶段记录时无需安装 Snakemake 或 ZotLit。
+| 工具 | 在项目里做什么 |
+| --- | --- |
+| <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> **Obsidian** | 在日常主库里打开各项目的入口、阶段判断和证据页。保留一份可编辑原稿，搜索和批注沿用自己的主库。 [如何接入](skills/ai-native-researchers/references/review-vault.md) |
+| <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> **Zotero** | 按项目和用途整理论文，在实验笔记中链接条目和具体出处。批量同步书目与阅读页，需要在 Obsidian 读 PDF 批注时再接 ZotLit。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit](skills/ai-native-researchers/references/literature.md) |
+| <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> **Git** | 追踪代码、配置和阶段笔记。大数据、模型权重放在原有存储里，用版本或文件指纹定位。 [怎样留证](skills/ai-native-researchers/references/reproduction.md) |
+| <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> **Snakemake** | 把检查数据、生成结果表等多步任务接起来。输入变了，按依赖重跑受影响的步骤。 [最小工作流](skills/ai-native-researchers/assets/snakemake-starter/) |
+| **ohmyplt** | 从可复算的表生成科研图。把图与原数据及绘图脚本放在一起，让正文、图注和数字能相互核对。 [ohmyplt 科研绘图技能](https://github.com/Lee-Eee-Eee/ohmyplt) |
 
-## 先跑一个小例子
+技能优先通过文件、命令行和本地 API 工作。用普通 Markdown 编辑器就能起步；需要选择数据版本、计算环境、集群调度和归档工具时，再按项目的实际难处选。 [工具选择表](skills/ai-native-researchers/references/tool-choices.md) · [图标来源](docs/media/tools/sources.md)
 
-克隆本仓库后，用 Python 3.12 从仓库根目录运行一条命令。目标选一个新目录，首次运行可能需要联网安装固定版本的 Snakemake。
+## 运行示例
+
+上图来自仓库可运行的合成示例。7 条观测中有 1 条缺测，B 组在两次观测中并列最高，取第一次。Snakemake 检查输入并生成汇总，技能再写出 `001` 判断页、`001a` 证据页和文件指纹。 [示例绘图源码](docs/media/render_demo.py)
+
+用 Python 3.12 在仓库根目录运行。首次运行可能需要下载脚本固定的 Snakemake 版本。
 
 ```sh
 python examples/demo.py research-demo
 ```
 
-打开 `research-demo/README.md`，沿着首页看一项完整的小实验。两组传感器一共 7 条合成观测，B 组有一条缺测，另外两次读数并列最高。脚本先检查数据，再计算两组各自第一次达到实测峰值的时刻，最后把实际结果、证据和复算入口写回项目。你可以在阶段页加一句自己的判断，再运行同一条命令检查批注是否保留。
+打开 `research-demo/README.md`。可以在判断页加一句自己的批注，再跑一次命令，检查批注是否还在、证据能否核验。已有结果表也可直接用[自动收尾命令](skills/ai-native-researchers/references/automation.md)接到项目首页。
 
-要套用到自己的计算，可复制[合成观测工作流](skills/ai-native-researchers/assets/snakemake-starter/)。已有结果表也可直接用[证据清单脚本](skills/ai-native-researchers/scripts/evidence.py)记录文件指纹。
+## 安装
 
-## 日常怎么用
+在 Codex 里可以直接说：
 
-| 手头的问题 | 技能会留下什么 |
-| --- | --- |
-| 项目做到哪儿了？ | 一张首页，链接最近一次有结果的实验以及下一步要回答的问题 |
-| 为什么相信这项结果？ | 一对阶段笔记，结论页讲判断，证据页链接输入、逐例输出和运行命令 |
-| 这篇论文支持哪一句话？ | 项目笔记中的出处、Zotero 条目和可核对的章节或图表 |
-| 换了输入，哪张表需要更新？ | 一条从原始文件通到目标表的 Snakemake 工作流 |
+> 请从 Lee-Eee-Eee/ai-native-researchers 安装 skills/ai-native-researchers。
 
-要把数字写回自己的项目，助手可以读本轮输出并填好阶段描述，然后执行[自动收尾命令](skills/ai-native-researchers/references/automation.md)。脚本从原编号接着排，让首页、判断、逐例表和文件指纹互相连通。重复执行会保留研究者的手写批注。完整做法见[技能正文](skills/ai-native-researchers/SKILL.md)。
+手动安装时，将仓库的 [skills/ai-native-researchers](skills/ai-native-researchers/) 子目录完整复制到 `~/.codex/skills/`。新开对话后，可以这样交代第一项工作：
 
-在 Zotero 加完一批论文后，[同步项目分类](skills/ai-native-researchers/references/library-sync.md)可一次读取子分类，更新 Obsidian 里的书目目录和阅读页。题录与 PDF 跳转直接来自本机 Zotero。需要导入划线原文时，再接 [ZotLit](skills/ai-native-researchers/references/literature.md)。
+> 用 $ai-native-researchers 整理刚结束的实验。先看看两种方法在哪些样本上表现不同，把逐例结果连到阶段笔记，留下能重跑这张表的命令。沿用我现在的目录。
 
-## 模型一代研究者怎么工作？
-
-研究者先说清想分辨的两种解释，以及什么观测会让自己改变判断。助手据此准备对照、运行分析、找出不符合预期的样本，把结论接回原始证据。换一个人接手时，他既能重复计算，也能看出上一次为什么作这个决定。
-
-[研究者与模型的分工](skills/ai-native-researchers/references/model-generation.md)给出从选题到发表的完整例子。[工具选择表](skills/ai-native-researchers/references/tool-choices.md)按实际问题介绍数据版本、环境锁定、集群作业、实验追踪、书目检索和带 DOI 的成果归档。
+[技能正文](skills/ai-native-researchers/SKILL.md) · [运行与交接](skills/ai-native-researchers/references/reproduction.md)
