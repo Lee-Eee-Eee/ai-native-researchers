@@ -43,9 +43,19 @@ The name "Model Generation" originates from two reflective essays by Jiang Yifan
 
 Across extensive literature surveys, cited arguments, primary sources, and reference data easily dissolve into chat history, making rigorous citation provenance nearly impossible during manuscript preparation. This workflow rejects leaving literature stranded in dialog threads: every verified paper is immediately filed into a dedicated Zotero project collection. Milestone notes link to the relevant Zotero items and record the chapter, equation, or figure numbers. Bibliographies can sync to Obsidian through the Zotero local API, and ZotLit can import PDF annotations. Whenever evidence requires auditing months later, following the note link penetrates directly to the original literature context. [Library sync](skills/ai-native-researchers/references/library-sync.md) · [ZotLit annotations](skills/ai-native-researchers/references/literature.md)
 
+<p align="center">
+  <a href="examples/xesine-notes/previews/zotero.png"><img src="examples/xesine-notes/previews/zotero.png" width="780" alt="Zotero showing the SEP Physics and Transport collection, with project and topic folders on the left and papers in the center."></a><br>
+  <sub>The SEP Physics and Transport collection in an actual Zotero library. Click the image to view it at full size.</sub>
+</p>
+
 ### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> Milestone Records and Human Decision-Making
 
 When models advance through successive rounds of experimentation, early assumptions, parameter sweeps, and data splits quickly blur together, leading to untracked drift. In this workflow, each experimental cycle crystallizes into two structured Markdown documents: `001` serves as the decision note, recording the core hypothesis, the researcher’s substantive qualitative evaluation, and the concrete forward path; `001a` serves as the companion evidence note, anchoring comparison tables, anomalous sample analyses, and exact execution commands. The researcher reviews both in Obsidian, embedding doubts and strategic steering directly into the record. When spawning a fresh conversation, migrating across model engines, or handing off to collaborators, the incoming collaborator or assistant can start from the project home and recent milestone notes. [Review in Obsidian](skills/ai-native-researchers/references/review-vault.md)
+
+<p align="center">
+  <a href="examples/xesine-notes/previews/obsidian.png"><img src="examples/xesine-notes/previews/obsidian.png" width="660" alt="The XeSINE-Net example project in Obsidian. The file tree sits beside the index for milestones 142 through 156 and their evidence notes."></a><br>
+  <sub>The XeSINE-Net example vault links each milestone to its record and evidence note. Click the image to view it at full size.</sub>
+</p>
 
 ### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> Scientific Directory Layout, Version Control, and Analysis Pipelines
 
@@ -65,19 +75,26 @@ Research groups can flexibly interface this layout with their established versio
 
 The repository provides a complete demonstration modeled after the directory structure of **XeSINE-Net**, preserving the multi-round milestone structure from `142/142a` through `156/156a` with representative demo content. The project home illustrates progress trajectories, upcoming milestones, and direct literature citations. Source code, configurations, results, and manuscripts reside cleanly in `code/`, `configs/`, `results/`, and `output/`. [Explore the XeSINE-Net project layout](examples/xesine-notes/)
 
-The literature management preview reflects a live Zotero environment, displaying the "SEP Physics and Transport" collection and its list of actual references. [Zotero screenshot](examples/xesine-notes/previews/zotero.png)
-
 ## Install
 
 To install the skill directly inside Codex, run:
 
 > Install skills/ai-native-researchers from Lee-Eee-Eee/ai-native-researchers.
 
-For manual installation, copy the [skills/ai-native-researchers](skills/ai-native-researchers/) folder into your local `~/.codex/skills/` directory. Once installed, invoke it when concluding an experimental run:
+### Manual setup
+
+Download or clone this repository and copy the entire [skills/ai-native-researchers](skills/ai-native-researchers/) folder into `~/.codex/skills/`.
+
+1. **Obsidian** — In the desktop app, choose **Open folder as vault**, select `examples/xesine-notes/`, and open `README.md` to find the milestone index. For your own project, open its directory as a vault or add a project entry to an existing vault. Obsidian’s built-in features handle Markdown notes and links. [Open a project vault](https://obsidian.md/help/manage-vaults) · [Add a project to an existing vault](skills/ai-native-researchers/references/review-vault.md)
+2. **Zotero** — Create a collection for the project and add its papers. To sync bibliographic records to Obsidian, go to **Settings → Advanced** and enable **Allow other applications on this computer to communicate with Zotero**. Keep Zotero open while you run the sync script with the collection key. For PDF annotations, install ZotLit from Obsidian’s **Community plugins**, follow its setup guide, and try importing one paper. [Local API](https://www.zotero.org/support/dev/web_api/v3/local_api) · [Collection sync commands](skills/ai-native-researchers/references/library-sync.md) · [Install ZotLit](https://zotlit.aidenlx.site/docs/install-zotlit)
+3. **Git and Snakemake** — Track code, configuration, and milestone notes in Git. To start a repository, run `git init` from your project root. To try the bundled workflow, use `uv` and the pinned Snakemake version in `examples/xesine-notes/` to build the milestone index. [Example command](examples/xesine-notes/#git-与-snakemake)
+4. **Figures, presentations, and papers** — Install ohmyplt from its repository for plotting. Start with your existing PPTX or Beamer template for talks. For papers, use the TeX engine and bibliography tools specified by your LaTeX template. [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [Output and build setup](skills/ai-native-researchers/references/research-outputs.md)
+
+Once installed, you can invoke the skill in Codex:
 
 > Use $ai-native-researchers to close out the experiment I just ran. Keep my existing project layout, write a milestone decision, and link the case-level results and the command that builds the table.
 
-Milestone closeout and migration scripts rely strictly on the Python standard library (tested under Python 3.12). Running the analysis pipeline example is recommended via `uv` with pinned Snakemake dependencies. Re-rendering the workflow diagram requires ohmyplt, Matplotlib, Pillow, and resvg-py. [Stage index example](examples/xesine-notes/#git-与-snakemake) · [Workflow graphic source](docs/media/render_workflow.py)
+The milestone and migration scripts use the Python standard library and were tested with Python 3.12. Rendering the workflow diagram requires ohmyplt, Matplotlib, Pillow, and resvg-py. [Workflow graphic source](docs/media/render_workflow.py)
 
 [Skill instructions](skills/ai-native-researchers/SKILL.md)
 

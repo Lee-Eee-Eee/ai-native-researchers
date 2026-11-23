@@ -43,9 +43,19 @@
 
 在多轮深度的 AI 调研中，模型引述的文献、理论渊源与图表极易湮灭在漫长的会话历史中，导致后续成文时原文无从稽考。我的做法是拒绝让文献停留在对话里：凡经核验的关键论文，即刻收录进 Zotero 专属项目分类；在研究阶段笔记中，严谨链接条目的唯一标识，并显式标注其对应的章节号、公式或图表编号。项目分类中的书目可以通过 Zotero 本地接口同步到 Obsidian，所需的 PDF 批注可以用 ZotLit 导入。无论数月后何时需要核对论据，顺着笔记链接便能瞬时穿透到一手文献的上下文。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 批注](skills/ai-native-researchers/references/literature.md)
 
+<p align="center">
+  <a href="examples/xesine-notes/previews/zotero.png"><img src="examples/xesine-notes/previews/zotero.png" width="780" alt="Zotero 中的 SEP 物理与传播分类，左侧是课题和主题目录，中央是论文条目。"></a><br>
+  <sub>Zotero 实际文库中的「SEP 物理与传播」分类。点击查看原图。</sub>
+</p>
+
 ### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> 阶段记录与人类决策
 
 当模型不知疲倦地推演了十数轮实验，早期引入的微小假设、超参扰动与临时切分往往会被遗忘，使研究演变为不可控的漂移。在这套工作流中，每轮实验必须沉淀为两份结构化 Markdown：`001` 作为阶段决策页，凝练记录本轮的核心探索动因、人类研究者对结果的定性判断与接下来的攻坚方向；`001a` 作为伴生证据页，忠实挂载基准对照表、反常案例剖析与可复现命令。研究者在 Obsidian 中集中审阅，将关键的怀疑与修正意见直接写在记录里。当需要另辟对话、切换模型架构或将成果移交同行时，接手的人可以先看项目首页和近期阶段记录，了解研究做到哪一步。 [在 Obsidian 审阅](skills/ai-native-researchers/references/review-vault.md)
+
+<p align="center">
+  <a href="examples/xesine-notes/previews/obsidian.png"><img src="examples/xesine-notes/previews/obsidian.png" width="660" alt="Obsidian 打开的 XeSINE-Net 示例项目，左侧是 Markdown 文件树，中央索引列出 142 到 156 的阶段记录及对应证据页。"></a><br>
+  <sub>XeSINE-Net 示例库的阶段索引，每一行都能打开对应的阶段记录和证据页。点击查看原图。</sub>
+</p>
 
 ### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> 科学目录规范、版本管理与分析依赖
 
@@ -65,19 +75,26 @@
 
 仓库以 **XeSINE-Net** 的实际项目目录为蓝本构建了完整的演示范例，忠实保留了从 `142/142a` 到 `156/156a` 的连续多轮阶段演进编号与项目骨架，笔记内容采用具代表性的演示文本。通过项目首页，你可以完整观察多轮探索的演化轨迹、阶段决断与外部文献的精准交织。源码、配置、结果与终稿分别归位于 `code/`、`configs/`、`results/` 与 `output/`。 [查看 XeSINE-Net 项目结构](examples/xesine-notes/)
 
-文献管理部分展示了真实的 Zotero 文库运行状态，界面展示了实际课题中的「SEP 物理与传播」文献分类和条目列表。 [Zotero 截图](examples/xesine-notes/previews/zotero.png)
-
 ## 安装
 
 在 Codex 对话中可直接发送以下指令引入技能：
 
 > 请从 Lee-Eee-Eee/ai-native-researchers 安装 skills/ai-native-researchers。
 
-若手动安装，请将 [skills/ai-native-researchers](skills/ai-native-researchers/) 目录完整复制至本机的 `~/.codex/skills/`。安装完成后，在推进完一轮实验时直接调用：
+### 手动配置
+
+下载或克隆本仓库，将 [skills/ai-native-researchers](skills/ai-native-researchers/) 整个目录复制到本机的 `~/.codex/skills/`。
+
+1. **Obsidian**　先用桌面版的「将文件夹打开为库」打开 `examples/xesine-notes/`，从 `README.md` 进入阶段索引。接入自己的课题时，可直接用项目目录建库，或在已有主库中加一个项目入口。查看 Markdown 笔记和链接只需 Obsidian 的基本功能。 [打开项目库](https://obsidian.md/help/manage-vaults) · [接入主库](skills/ai-native-researchers/references/review-vault.md)
+2. **Zotero**　在桌面版为课题建一个分类，把相关论文放进去。要批量同步书目到 Obsidian，在 Zotero 的「设置 → 高级」中启用「允许本机上的其他应用程序与 Zotero 通信」，保持 Zotero 开启，再用分类键运行同步脚本。要把 PDF 批注带入笔记，可在 Obsidian 的「第三方插件」安装 ZotLit，按引导连接文库并先试一篇。 [本地 API](https://www.zotero.org/support/dev/web_api/v3/local_api) · [分类同步命令](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 安装](https://zotlit.aidenlx.site/docs/install-zotlit)
+3. **Git 与 Snakemake**　沿用项目的 Git 仓库，首次启用时在项目根目录运行 `git init`，把代码、配置和阶段笔记纳入版本管理。要试跑分析流程，可在 `examples/xesine-notes/` 用 `uv` 和示例指定的 Snakemake 版本生成阶段索引。 [示例命令](examples/xesine-notes/#git-与-snakemake)
+4. **绘图、汇报与论文**　需要绘图时按 ohmyplt 仓库说明安装技能。汇报可沿用 PPTX 或 Beamer 模板，编译论文时按现有 LaTeX 模板配置 TeX 引擎和书目工具。 [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [交付与编译](skills/ai-native-researchers/references/research-outputs.md)
+
+安装完成后，可以在 Codex 里直接调用技能：
 
 > 用 $ai-native-researchers 整理刚结束的实验。沿用现有目录，写一页阶段判断，链接对应的逐例结果和生成结果表的命令。
 
-阶段收尾与迁移脚本均仅依赖 Python 标准库（在 Python 3.12 下完成验证）。运行示例中的数据分析依赖推荐使用 `uv` 部署固定的 Snakemake 环境。重画工作流图需要 ohmyplt、Matplotlib、Pillow 与 resvg-py。 [阶段索引示例](examples/xesine-notes/#git-与-snakemake) · [流程图脚本](docs/media/render_workflow.py)
+阶段收尾与迁移脚本仅依赖 Python 标准库（在 Python 3.12 下验证）。重画本页工作流图需要 ohmyplt、Matplotlib、Pillow 与 resvg-py。 [流程图脚本](docs/media/render_workflow.py)
 
 [技能正文](skills/ai-native-researchers/SKILL.md)
 
