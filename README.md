@@ -1,38 +1,59 @@
-# “模型一代”研究者
+<p align="center">
+  <img src="docs/media/tools/ai-native-researchers.png" width="88" height="88" alt="">
+</p>
 
-[English](README.en.md) · [示例项目](#示例项目) · [安装](#安装)
+<h1 align="center">“模型一代”研究者</h1>
 
-这几年我在学做科研，也在学着和 AI 一起做事。我请助手查论文、跑分析，准备组会时常要回聊天记录里找一篇已经查过的论文。实验做了几轮，代码和结果都在项目目录里，当时定下的对照条件和改参数的理由散在几段对话里。另开对话或合作者接手，我得把这些事再讲一遍。
+<p align="center">
+  <a href="README.en.md">English</a> ·
+  <a href="#示例项目">示例项目</a> ·
+  <a href="#安装">安装</a> ·
+  <a href="LICENSE">Apache-2.0</a>
+</p>
 
-我想把这些事留在项目里。打开首页，我就能找到读过的论文、每轮实验的记录和交出去的稿件。助手做完一轮，我在这里看进度、调整下一轮的方案。合作者也从同一页接手。我把这套做法整理成了 **AI-Native Researchers**，一项可以安装的科研项目管理技能。 [研究者与助手的分工](skills/ai-native-researchers/references/model-generation.md)
+<p align="center">
+  <a href="skills/ai-native-researchers/references/library-sync.md"><img src="docs/media/tools/zotero.png" width="24" height="24" align="middle" alt=""> Zotero 文献</a> &nbsp;
+  <a href="skills/ai-native-researchers/references/review-vault.md"><img src="docs/media/tools/obsidian.svg" width="24" height="24" align="middle" alt=""> Obsidian 笔记</a> &nbsp;
+  <a href="skills/ai-native-researchers/references/reproduction.md"><img src="docs/media/tools/git.svg" width="24" height="24" align="middle" alt=""> Git 版本</a> &nbsp;
+  <a href="skills/ai-native-researchers/assets/snakemake-starter/"><img src="docs/media/tools/snakemake.svg" width="24" height="24" align="middle" alt=""> Snakemake 分析</a> &nbsp;
+  <a href="https://github.com/Lee-Eee-Eee/ohmyplt"><img src="docs/media/tools/ohmyplt.png" width="24" height="24" align="middle" alt=""> ohmyplt 绘图</a>
+</p>
 
-项目的名字来自两篇文章。蒋一凡写 AI 到来以后，身边的人重新考虑自己的学业和工作。邓耿把话题接了下去，谈到人得自己决定什么值得做。 [蒋一凡《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [邓耿《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
+人工智能已经开始改变科研的分工。以前一个课题能同时往几个方向做，很大程度上要看组里有多少人，谁能腾出空读文献、写程序、做实验。现在一个普通研究者也可以请模型沿着几条思路各做一轮，等看过结果，再决定精力花在哪里。从想试一试，到手里真的有结果可看，中间那段路短了不少。能在刚开始学做科研的时候碰上这场变化，我觉得很幸运。
 
-![项目首页居中，左侧是 Obsidian 和 Zotero，右侧是 Git 和 Snakemake，下方是 ohmyplt 配图、PowerPoint 汇报和 LaTeX 稿件。](docs/media/research-workflow.png)
+我最在意的是，做研究的人得掌握自己的工作。几轮调研下来，书目和原文散在各段对话里。助手接着跑实验，改了几个条件，我想停下来判断一组新结果，就得先弄清它用过的数据和做过的对照。另开对话，我要把前面的事重新说一遍。合作者拿到代码和结果，也还得来问前几轮的决定。尤其现在可以更快地得到一批看起来不错的结果，自己就更得练会选问题、定对照，知道一份证据能说明到哪一步。
 
-## 研究流程
+这样下去，实验室里怎么合作，研究成果怎么交给别人，都会跟着变。我先从自己每天要管的事做起，把这套办法整理成了 **AI-Native Researchers**。查过的论文进文库，实验每做一轮就留一份记录，代码和结果有各自的位置。助手往前做的时候，我能回来读进展，补判断，改下一步。合作者拿到项目，也从同一个首页接着做。这套工作流做成了一个可以安装的技能。 [研究者与助手的分工](skills/ai-native-researchers/references/model-generation.md)
+
+「模型一代」这个名字来自蒋一凡和邓耿的两篇文章。 [蒋一凡《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [邓耿《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
+
+<p align="center">
+  <img src="docs/media/research-workflow.png" width="780" alt="项目首页连接 Obsidian 笔记、Zotero 文献、Git 版本与 Snakemake 分析，并通向配图、汇报和论文。">
+</p>
+
+## 我用的办法
 
 ### <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> 文献和阅读笔记
 
-AI 帮我查完文献后，我把核对过的书目收进 Zotero 的项目分类。写阶段笔记时，我把用到的论文链接进去，顺手记下相关的章节或图号。后来要用同一张图，我可以从笔记回到原文。我也可以把 Zotero 分类里的书目和阅读笔记同步到 Obsidian。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 批注](skills/ai-native-researchers/references/literature.md)
+AI 查完一批文献，我把核对过的条目按项目和用途收进 Zotero。用到一篇文章里的方法或结果，我就在阶段笔记留个链接，顺便记上章节或图号。过一阵再写稿，沿着笔记就找得回原文。整组书目和阅读笔记也可以同步到 Obsidian。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 批注](skills/ai-native-researchers/references/literature.md)
 
 ### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> 实验记录和下一步
 
-一轮实验结束后，我请助手补两页 Markdown，在 `001` 记下本轮的尝试、我的判断和下一步，在 `001a` 附上结果表和运行记录，再记下异常样本。我在 Obsidian 看这两页，直接在相关处补意见。下次开新对话，我请助手先读项目首页和最近一轮的笔记。 [在 Obsidian 审阅](skills/ai-native-researchers/references/review-vault.md)
+我请助手每做完一轮就补两份 Markdown。`001` 写做过的尝试、我对结果的判断和接下来的安排，`001a` 留结果表、异常样本和运行记录。我用 Obsidian 看这两份笔记，有意见就写在这轮的记录里。下一次开对话，我让助手先读首页和最近几轮的笔记。合作者拿到项目，也能沿着同一份记录往下读。 [在 Obsidian 审阅](skills/ai-native-researchers/references/review-vault.md)
 
 ### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> 目录、版本和分析
 
-我在项目里分开存原始数据、代码和配置、分析结果、交付稿件，用 Git 留下代码、配置和笔记的版本。数据或模型权重放在别处时，我请助手在运行记录里写下位置和版本。分析有好几步时，我用 Snakemake 把每步的输入和产物写进规则。输入有变动，我再运行 Snakemake，让它更新依赖这份输入的结果。 [项目目录](skills/ai-native-researchers/references/project-structure.md) · [运行记录](skills/ai-native-researchers/references/reproduction.md) · [Snakemake 示例](skills/ai-native-researchers/assets/snakemake-starter/)
+几轮分析下来，目录里会积出好几版脚本、配置和结果。我希望用到一张图时，能顺着记录查到当时的数据和代码，所以原始数据、脚本和配置、分析结果、交付稿件各有各的位置。Git 记代码、配置和笔记的版本。数据和模型权重放在外部时，运行记录要写明位置和版本。多步分析用 Snakemake 写清每步的输入和输出，改了输入再跑，受影响的结果就会跟着更新。 [项目目录](skills/ai-native-researchers/references/project-structure.md) · [运行记录](skills/ai-native-researchers/references/reproduction.md) · [Snakemake 示例](skills/ai-native-researchers/assets/snakemake-starter/)
 
 ### <img src="docs/media/tools/ohmyplt.svg" width="22" height="22" alt=""> 从结果到组会和论文
 
-准备汇报时，我从阶段笔记挑结果，用 ohmyplt 从结果表画图，再把图放进 PowerPoint 或 Beamer。论文用项目的 LaTeX 模板和 Zotero 书目。我在阶段笔记里附上源稿、定稿和图表的链接，改稿时再从这页打开当时的文件。 [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [科研图、汇报与论文](skills/ai-native-researchers/references/research-outputs.md)
+到了组会或正式汇报，我从阶段记录挑要讲的结果，用 ohmyplt 从结果表画图，脚本也留着。汇报用 PowerPoint 或 Beamer，论文沿用项目的 LaTeX 模板和 Zotero 书目。最后把源稿、定稿和用到的图表链接回阶段记录。等到改稿，我从这儿接着找。 [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [科研图、汇报与论文](skills/ai-native-researchers/references/research-outputs.md)
 
 ## 接入已有项目
 
-整理旧项目时，我先在原目录生成 `docs/init.md`，给已有的 Markdown 笔记做个索引。我从首页链接这份索引，再补上当前进展、结果和稿件。项目里的链接用相对路径。合作者拿到共享的目录和数据说明，可以从首页找到手头要接的工作。 [项目目录与迁移](skills/ai-native-researchers/references/project-structure.md)
+手上已经做了一段时间的项目，可以先把原来的 Markdown 笔记索引出来。迁移命令会在笔记目录生成 `init.md`，比如 `docs/init.md`。在原首页加上这个索引，再补上最近的进展、结果和稿件。项目内用相对链接，别人拿到目录就能沿着首页读。外部数据另外写好访问说明。 [项目目录与迁移](skills/ai-native-researchers/references/project-structure.md)
 
-团队原来用的版本管理、集群调度和归档工具可以继续用。 [工具选择](skills/ai-native-researchers/references/tool-choices.md) · [图标来源](docs/media/tools/sources.md)
+团队可以按原有的版本管理、集群调度和归档方式接入。 [工具选择](skills/ai-native-researchers/references/tool-choices.md)
 
 ## 示例项目
 
@@ -50,4 +71,10 @@ AI 帮我查完文献后，我把核对过的书目收进 Zotero 的项目分类
 
 > 用 $ai-native-researchers 整理刚结束的实验。沿用现有目录，写一页阶段判断，链接对应的逐例结果和生成结果表的命令。
 
+阶段收尾和迁移脚本使用 Python 标准库。本仓库用 Python 3.12 测试。运行阶段索引示例可通过 `uv` 安装示例固定的 Snakemake 版本。页首的工具按需要接入，重画流程图需要 ohmyplt、Matplotlib、Pillow 和 resvg-py。 [阶段索引示例](examples/xesine-notes/#git-与-snakemake) · [流程图脚本](docs/media/render_workflow.py)
+
 [技能正文](skills/ai-native-researchers/SKILL.md)
+
+## 许可
+
+仓库自有代码和文档采用 Apache-2.0。第三方图标、商标及截图中的第三方内容适用各自的使用条款。 [许可证](LICENSE) · [图标来源](docs/media/tools/sources.md)
