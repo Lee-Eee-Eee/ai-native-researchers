@@ -1,0 +1,30 @@
+XeSINE-Net 示例笔记的索引任务
+在独立临时仓库执行。Git 记录目录示例的索引起点，Snakemake 记录受影响的任务。
+
+$ git log -2 --oneline
+4d4e7b3 Include milestone pairs from stage 142
+a0e948f Index the latest two milestone pairs
+
+$ git diff HEAD~1 HEAD -- configs/stage-index.json
+diff --git a/configs/stage-index.json b/configs/stage-index.json
+index d1f9c0e..d89aced 100644
+--- a/configs/stage-index.json
++++ b/configs/stage-index.json
+@@ -1,4 +1,4 @@
+ {
+-  "first_stage": 155,
++  "first_stage": 142,
+   "last_stage": 156
+ }
+
+$ snakemake --cores 1 --dry-run results/stage-index.tsv
+Job stats:
+job            count
+-----------  -------
+stage_index        1
+total              1
+
+rule stage_index:
+    reason: Updated input files: configs/stage-index.json
+
+执行更新后，索引包含 142–156 共 15 对笔记。再次运行，Snakemake 报告 Nothing to be done。

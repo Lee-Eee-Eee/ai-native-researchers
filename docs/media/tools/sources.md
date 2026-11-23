@@ -2,6 +2,8 @@
 
 README 使用各工具的原始图标，保留其比例、形状和颜色。
 
+[AI-Native Researchers](ai-native-researchers.svg) 和 [ohmyplt](ohmyplt.svg) 的图标是此次项目介绍绘制的原创标记。
+
 | 图标 | 官方出处与署名 |
 | --- | --- |
 | [Obsidian](obsidian.svg) | [品牌指南](https://obsidian.md/brand)中的[应用图标](https://obsidian.md/images/obsidian-logo-gradient.svg)。Obsidian 名称及图标是 Obsidian 的商标。 |

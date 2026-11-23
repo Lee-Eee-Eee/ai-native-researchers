@@ -7,6 +7,8 @@
 ```json
 {
   "id": "thermometer-offset",
+  "project": "温度计标定",
+  "date": "2026-01-15",
   "question": "校正零点后，第二天的读数准了多少？",
   "finding": "第二天独立记录的 24 个整点里，平均绝对误差从 0.8 °C 降到 0.3 °C。",
   "comparison": "两组使用同一支参考温度计和同一批 24 个整点。零点偏差只用第一天估计。",
@@ -24,7 +26,9 @@ python /path/to/scripts/close_stage.py stage.json --dry-run
 python /path/to/scripts/close_stage.py stage.json
 ```
 
-预览会检查文件是否齐全并列出将要写入的路径。正式执行后，从首页点进编号结论页，再点“逐项证据与复算”，即可找到原始结果、计算命令和同号 `.evidence.json`。例如阶段号是 017 时，可在项目根目录单独复核文件内容。
+预览会检查文件是否齐全并列出将要写入的路径。新建的两页带有 `project`、`stage`、`date` 和 `kind` 属性。`project` 和 `date` 可省略，分别取项目根目录名和首次写入当天。多人共享或迁移路径的项目可显式填写一贯使用的项目名。已有页面会保留原内容和属性。[在主库汇总阶段](review-vault.md#用笔记属性汇总阶段)
+
+正式执行后，从首页点进编号结论页，再点“逐项证据与复算”，即可找到原始结果、计算命令和同号 `.evidence.json`。例如阶段号是 017 时，可在项目根目录单独复核文件内容。
 
 ```sh
 python /path/to/scripts/evidence.py verify --root . --manifest docs/017_thermometer-offset.evidence.json

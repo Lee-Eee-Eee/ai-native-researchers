@@ -2,6 +2,7 @@
 
 import argparse
 from contextlib import contextmanager, nullcontext
+from datetime import date
 import hashlib
 import json
 import os
@@ -59,17 +60,34 @@ def link(title, target, source):
     return f"[{label(title)}]({quote(relative, safe='/.-_~')})"
 
 
+def stage_properties(root, number, spec):
+    project = require_text(spec.get("project", root.name or root.anchor), "project")
+    if len(project.splitlines()) != 1 or re.search(r"[\ud800-\udfff]", project):
+        raise ValueError("Use one line of Unicode text for project")
+    recorded_on = date.today().isoformat()
+    if "date" in spec:
+        recorded_on = require_text(spec["date"], "date")
+        try:
+            if date.fromisoformat(recorded_on).isoformat() != recorded_on:
+                raise ValueError()
+        except ValueError:
+            raise ValueError("Use a calendar date in YYYY-MM-DD format") from None
+    # YAML accepts JSON string quoting. Escape characters that YAML restricts in source text.
+    quoted_project = re.sub(r"[\x7f-\x9f\ufffe\uffff]", lambda match: f"\\u{ord(match[0]):04x}",
+                            json.dumps(project, ensure_ascii=False))
+    return f'---\nproject: {quoted_project}\nstage: "{number}"\ndate: {recorded_on}\n'
+
+
 def add_files(root, spec):
     entries = []
-    for role, names in (("input", spec["inputs"]), ("output", spec["outputs"])):
-        for name in names:
-            if Path(name).is_absolute():
-                raise ValueError(f"Expected a project-relative path: {name}")
-            path = evidence.project_path(root, name)
-            if not path.is_file():
-                raise ValueError(f"Missing {role} file: {name}")
-            entries.append({"role": role, "path": path.relative_to(root).as_posix(),
-                            "sha256": evidence.fingerprint(path)})
+    for name in [*spec["inputs"], *spec["outputs"]]:
+        if Path(name).is_absolute():
+            raise ValueError(f"Expected a project-relative path: {name}")
+    for role, name, path in evidence.paths_by_role(root, spec["inputs"], spec["outputs"]):
+        if not path.is_file():
+            raise ValueError(f"Missing {role} file: {name}")
+        entries.append({"role": role, "path": path.relative_to(root).as_posix(),
+                        "sha256": evidence.fingerprint(path)})
     return entries
 
 
@@ -146,14 +164,17 @@ def close(root, notes, home, spec, dry_run, git):
     if target_names or marker in home_text or home in targets:
         raise ValueError("Stage number, id or homepage entry is already in use")
 
+    properties = stage_properties(root, prefix, spec)
     entries = add_files(root, spec)
     if any(root / entry["path"] == home for entry in entries):
         raise ValueError("The homepage would change during fingerprinting")
     report = {"schema": 1, "git": git, "files": entries, "stage": {"id": stem, "spec_sha256": digest}}
-    decision_text = (f"# {prefix} {spec['question']}\n\n{spec['finding']}\n\n"
+    decision_text = (f'{properties}kind: "阶段判断"\n---\n\n'
+                     f"# {prefix} {spec['question']}\n\n{spec['finding']}\n\n"
                      f"## 对照条件\n\n{spec['comparison']}\n\n## 下一步\n\n{spec['next']}\n\n"
                      f"{link('逐项证据与复算', detail, decision)}\n")
-    lines = [f"# {prefix}a {spec['question']} · 证据", "", link("阶段结论", decision, detail),
+    lines = [f'{properties}kind: "证据与复算"\n---', "", f"# {prefix}a {spec['question']} · 证据",
+             "", link("阶段结论", decision, detail),
              "", "## 输入与产物", ""]
     for entry in entries:
         role = "输入" if entry["role"] == "input" else "产物"

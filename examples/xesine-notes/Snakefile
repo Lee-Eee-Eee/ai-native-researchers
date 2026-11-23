@@ -1,0 +1,12 @@
+from glob import glob
+
+
+rule stage_index:
+    input:
+        code="code/build_stage_index.py",
+        settings="configs/stage-index.json",
+        notes=sorted(glob("docs/[0-9][0-9][0-9]*_*.md")),
+    output:
+        "results/stage-index.tsv",
+    shell:
+        "python -X utf8 {input.code:q} {input.settings:q} {output:q} {input.notes:q}"

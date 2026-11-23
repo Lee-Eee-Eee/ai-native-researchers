@@ -14,6 +14,16 @@ def project_path(root, name):
     return path
 
 
+def paths_by_role(root, inputs, outputs):
+    paths = [(role, name, project_path(root, name))
+             for role, names in (("input", inputs), ("output", outputs)) for name in names]
+    input_paths = {path for role, _, path in paths if role == "input"}
+    for role, name, path in paths:
+        if role == "output" and path in input_paths:
+            raise ValueError(f"A file cannot be both input and output of the same stage: {name}")
+    return paths
+
+
 def fingerprint(path):
     with path.open("rb") as stream:
         digest = hashlib.sha256()
@@ -36,16 +46,14 @@ def git_state(root):
 
 def record(args, root, manifest):
     entries = []
-    for role, names in (("input", args.input), ("output", args.output)):
-        for name in names:
-            path = project_path(root, name)
-            if path == manifest:
-                raise ValueError("The manifest cannot list itself")
-            entries.append({
-                "role": role,
-                "path": path.relative_to(root).as_posix(),
-                "sha256": fingerprint(path),
-            })
+    for role, _, path in paths_by_role(root, args.input, args.output):
+        if path == manifest:
+            raise ValueError("The manifest cannot list itself")
+        entries.append({
+            "role": role,
+            "path": path.relative_to(root).as_posix(),
+            "sha256": fingerprint(path),
+        })
     payload = {"schema": 1, "git": git_state(root), "files": entries}
     manifest.parent.mkdir(parents=True, exist_ok=True)
     content = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"

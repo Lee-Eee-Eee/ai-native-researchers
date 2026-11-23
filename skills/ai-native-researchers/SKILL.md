@@ -1,6 +1,6 @@
 ---
 name: ai-native-researchers
-description: Manage a research project across experiments, numbered Markdown or Obsidian milestones, Zotero papers and reproducible Snakemake workflows. Use for project setup, closing an experiment, tracing a result to its evidence, or handing off ongoing research.
+description: Organize reproducible research across experiments, Markdown or Obsidian milestones, Zotero and Snakemake. Use for project setup, experiment closeout, research handoff, or turning traceable evidence into scientific figures, presentations and LaTeX papers.
 ---
 
 # AI Native Researchers
@@ -9,12 +9,13 @@ description: Manage a research project across experiments, numbered Markdown or 
 
 默认通过文件、命令行、连接器和本地 API 在后台工作。遇到软件要求用户批准的原生授权，把动作、用途和当前进度告诉用户。让用户决定何时处理弹窗，继续做可独立完成的工作。仅在用户要求使用桌面时才接管窗口。
 
-若要设计整组的研究方式，读[模型参与研究时如何分工](references/model-generation.md)。它从选题、设计比较讲到交付，给出独立复核和检验自动化收益的办法。遇到数据版本、集群调度、模型追踪或成果归档等具体困难时，根据[工具选择表](references/tool-choices.md)选一项接到现有流程中。
+若要设计整组的研究方式，读[模型参与研究时如何分工](references/model-generation.md)。整理实际流程时，沿着一条结论回查数据、环境、图表、书目和最终文件，找出反复手抄、比对或重跑的环节。按[工具选择表](references/tool-choices.md)主动找合适的工具，先用一个已有产物试接并核对效果。
 
 ## 建立项目入口
 
+- 新项目从[科研项目目录](references/project-structure.md)的最小结构起步。已有项目先核对目录和原稿，用迁移命令生成 `init.md` 索引，把实际进展接回当前首页。保留原始输入，派生文件写到另一路径，记录环境和复算入口。
 - 用一个个人 Obsidian 主库日常审阅。各项目有自己的入口，各阶段笔记只保留一份可编辑原稿。首页链接当前问题、最新结论、逐例证据、原始结果和下一步。需要独立交接或与另一组人单独共享整套笔记时，再单独建库。
-- 已有项目接入主库时，先查首页和阶段页的相对链接、旧入口、手写批注及插件输出目录。按[主库接入与验收](references/review-vault.md)选取需要审阅的原稿，在主库验证引用能打开、编辑能写回。
+- 已有项目接入主库时，先查首页和阶段页的相对链接、旧入口、手写批注及插件输出目录。按[主库接入与验收](references/review-vault.md)选取需要审阅的原稿，在主库验证引用能打开、编辑能写回。新阶段判断和证据页用同一 `project`、`stage`、`date`，用 `kind` 区分页型，可在主库汇总。
 - 代码和轻量参数用 Git。大数据、模型权重或受限材料沿用其存储位置，给阶段记录留下检索所需的数据版本、稳定标识或校验值。
 
 ## 结束一轮实验
@@ -32,6 +33,10 @@ description: Manage a research project across experiments, numbered Markdown or 
 单一脚本若已足够，保留其入口。当做出一个结果需要多道加工、多人重复操作或反复更换输入时，选一张真正需要交付的图或表，从它向前追到原始输入。把每一步的输入、脚本、参数和输出写成 Snakemake 规则。给规则加入可判定的质量条件，例如行数、独立组数、单位、重复键或对照是否配齐。
 
 从小样本开始，在隔离环境试跑，随后改一个输入检验重算范围。运行与留证的细节见[复算与交接](references/reproduction.md)。新项目可复制[最小工作流](assets/snakemake-starter/)。
+
+## 把证据用在图、汇报和论文里
+
+需要论文图、组会或项目汇报、LaTeX 稿件或文风调整时，读[科研图、汇报与论文](references/research-outputs.md)。先确认目标项目、实际定稿和读者，再从阶段判断追到逐例证据，选定要引用的结果、数据版本与原文图号。按需衔接 ohmyplt、research-group-talk、PowerPoint 或 Beamer、LaTeX 编译和写作技能。保留可编辑源，验收实际交付的 PPTX 或 PDF，把定稿与关键图表接回阶段页。
 
 ## 交接
 

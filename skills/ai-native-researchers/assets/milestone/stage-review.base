@@ -1,0 +1,40 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - 'note.project != null'
+    - 'note.stage != null'
+    - or:
+        - 'note.kind == "阶段判断"'
+        - 'note.kind == "证据与复算"'
+properties:
+  file.name:
+    displayName: 笔记
+  note.project:
+    displayName: 项目
+  note.stage:
+    displayName: 阶段
+  note.date:
+    displayName: 日期
+  note.kind:
+    displayName: 类型
+views:
+  - type: table
+    name: 全部阶段记录
+    groupBy:
+      property: note.project
+      direction: ASC
+    order:
+      - file.name
+      - note.stage
+      - note.date
+      - note.kind
+  - type: table
+    name: 阶段判断
+    filters: 'note.kind == "阶段判断"'
+    groupBy:
+      property: note.project
+      direction: ASC
+    order:
+      - file.name
+      - note.stage
+      - note.date

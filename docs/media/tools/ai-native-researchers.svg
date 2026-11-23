@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="AI-Native Researchers">
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="#E4EDE2"/>
+  <path d="M18 42h-4V15h23" fill="none" stroke="#759785" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 20h16l6 6v23H20z" fill="#FFFDF5" stroke="#245442" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M36 20v7h6M25 32h11m-11 7h8m9-4h4l5-5" fill="none" stroke="#245442" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="51" cy="29" r="3.6" fill="#245442"/>
+</svg>

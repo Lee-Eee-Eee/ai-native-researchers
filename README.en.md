@@ -1,53 +1,53 @@
 # AI-Native Researchers
 
-[简体中文](README.md) · [Install](#install) · [Run the example](#run-the-example)
+[简体中文](README.md) · [Example project](#example-project) · [Install](#install)
 
-**AI-Native Researchers** is a research project management skill for individuals and teams. It starts with a practical question: **when models can search the literature, write code, and run experiments, how should researchers organize their work so others can check the decisions they make?**
+I've been learning to do research and to work with AI at the same time. I ask an assistant to find papers and run analyses, then go back through the chat to find a source for a lab meeting. As the experiments go on, there's more to look up. The code and results are in the project folder. The choices we made about the comparisons and the reasons for changing a parameter are in the conversations. When I start a fresh chat or hand the project to a colleague, I have to explain it all over again.
 
-AI-native researchers plan for collaboration with models from the start. People decide which question matters and what evidence would change their minds. Models and scripts organize references, check data, run comparisons, and find failures. They link each result to its sources. Months later, someone joining the project can trace a claim to the relevant cases, data version, command, and paper, and see why the team reached that conclusion.
+I wanted to open one project page and find the papers I had read, a record of each round, and the drafts and reports we had sent out. I could see where things stood and change the plan when it was time to try a different comparison or investigate an unusual result. A colleague could pick up the work from the same page. I turned that workflow into **AI-Native Researchers**, an installable skill for managing research projects. [Roles of researchers and assistants](skills/ai-native-researchers/references/model-generation.md)
 
-![Synthetic observations. A first reaches its maximum at 2 hours and B at 3 hours. The right-hand side shows the decision note, evidence note, and rerun command.](docs/media/research-demo.en.png)
+The name comes from two essays. Jiang Yifan writes about students and early-career researchers reconsidering their choices as AI arrives. Deng Geng takes up the same discussion and writes about deciding for ourselves what is worth doing. [Jiang Yifan's 《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [Deng Geng's 《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
 
-## What to keep from each round
+![The project home sits between Obsidian and Zotero on the left and Git and Snakemake on the right, with ohmyplt figures, PowerPoint presentations, and LaTeX papers below.](docs/media/research-workflow.en.png)
 
-1. **Write down what the experiment should distinguish.** Record the research question, comparison conditions, and the observation that would change your judgment. Ask the assistant to check inputs, sample splits, and how the results will be scored.
-2. **Link the decision to its evidence.** Give each substantive milestone two numbered Markdown notes. The main note explains what you learned. Its companion, marked with an `a`, records individual results, failures, denominators, and commands. Link both from the project home.
-3. **Trace a claim back to data and papers.** Have a colleague rerun a result table or verify a key number with an independent implementation. When citing a paper, name the claim it supports and point to the section, figure, or annotation.
+## The research workflow
 
-This is our starting point for **research project management in the AI era**. Judge an automation by how much time it saves on finding files, copying results, and explaining past decisions, and by whether someone else can use it to verify a claim. [How researchers and models share the work](skills/ai-native-researchers/references/model-generation.md)
+### <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> Papers and reading notes
 
-## How the tools fit together
+After a search, I add the papers I've checked to the project's Zotero collection. In the milestone note, I link the papers I actually used and jot down the relevant section or figure number. The next time I need that figure, I can go straight from the note to the paper. I can also sync the collection's bibliography and reading notes to Obsidian. [Library sync](skills/ai-native-researchers/references/library-sync.md) · [ZotLit annotations](skills/ai-native-researchers/references/literature.md)
 
-| Tool | Role in the project |
-| --- | --- |
-| <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> **Obsidian** | Open project homes, decisions, and evidence notes from a personal review vault. Keep one editable copy of each note and use the same search and annotation tools across projects. [Connect a project](skills/ai-native-researchers/references/review-vault.md) |
-| <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> **Zotero** | Organize papers by project and purpose. Link items and specific passages from research notes. Sync bibliographies and reading notes in batches, and use ZotLit to read PDF annotations in Obsidian. [Library sync](skills/ai-native-researchers/references/library-sync.md) · [ZotLit](skills/ai-native-researchers/references/literature.md) |
-| <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> **Git** | Track code, configurations, and milestone notes. Keep large datasets and model checkpoints in their existing storage and refer to them by version or checksum. [Record evidence](skills/ai-native-researchers/references/reproduction.md) |
-| <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> **Snakemake** | Connect steps such as input validation and table generation. When an input changes, rerun the steps that depend on it. [Starter workflow](skills/ai-native-researchers/assets/snakemake-starter/) |
-| **ohmyplt** | Turn reproducible tables into scientific figures. Keep the data and plotting script with each figure so readers can check the numbers against the caption and text. [ohmyplt scientific plotting skill](https://github.com/Lee-Eee-Eee/ohmyplt) |
+### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> Experiment notes and next steps
 
-The skill uses files, command-line tools, and local APIs by default. Any Markdown editor is enough to get started. Choose data versioning, environments, cluster schedulers, and archives as the project needs them. [Tool guide](skills/ai-native-researchers/references/tool-choices.md) · [Icon sources](docs/media/tools/sources.md)
+After each round of experiments, I ask the assistant to write two Markdown notes. In `001`, we record what we tried, my assessment of the results, and the next step. The companion note `001a` links to results tables and run records and calls out unusual cases. I review both notes in Obsidian and add comments beside the relevant results. When I open a new conversation, I ask the assistant to read the project home and the notes from the last round. [Review in Obsidian](skills/ai-native-researchers/references/review-vault.md)
 
-## Run the example
+### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> Files, versions, and analysis
 
-The figure above uses the synthetic data included in the repository. One of seven readings is missing, and B reaches the same maximum twice. The example uses the first occurrence. Snakemake checks the inputs and builds a summary, then the skill writes decision note `001`, evidence note `001a`, and a checksum manifest. [Plot source](docs/media/render_demo.py)
+I keep raw data, code and configuration, results, and deliverables in separate places. Git tracks the code, configuration, and notes. When data or model weights live elsewhere, I ask the assistant to record their location and version. For a multi-step analysis, I write the inputs and outputs of each step as Snakemake rules. Snakemake can then update the results that depend on a changed input. [Project layout](skills/ai-native-researchers/references/project-structure.md) · [Run records](skills/ai-native-researchers/references/reproduction.md) · [Snakemake example](skills/ai-native-researchers/assets/snakemake-starter/)
 
-Run this from the repository root with Python 3.12. The first run may need to download the pinned Snakemake version.
+### <img src="docs/media/tools/ohmyplt.svg" width="22" height="22" alt=""> Figures, talks, and papers
 
-```sh
-python examples/demo.py research-demo
-```
+For a talk, I pick results from the milestone notes, plot them with ohmyplt, and put the figures in PowerPoint or Beamer. I use the project's LaTeX template and Zotero bibliography for the paper. I link the figures, tables, and both the editable and final files from the milestone note so I can find them again when I revise the work. [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [Research outputs](skills/ai-native-researchers/references/research-outputs.md)
 
-Open `research-demo/README.md`. Add a note of your own to the decision page and run the command again to check that your note is preserved and the evidence still verifies. If you already have a results table, use the [milestone command](skills/ai-native-researchers/references/automation.md) to connect it to your project home.
+## Bringing in an existing project
+
+When I organize an existing project, I start by generating a `docs/init.md` index of the Markdown files already there. I add the index to the project home along with links to the current work, results, and drafts. I use relative paths inside the project, so a colleague who receives the shared folder and data notes can start from the home page. [Project layout and migration](skills/ai-native-researchers/references/project-structure.md)
+
+Teams can use their existing tools for data versioning, cluster scheduling, and archiving. [Tool guide](skills/ai-native-researchers/references/tool-choices.md) · [Icon sources](docs/media/tools/sources.md)
+
+## Example project
+
+I kept the **XeSINE-Net** directory layout and milestones `142` through `156` for this example and wrote demonstration notes for them. Open the project home for the current work, next steps, and literature. Open a milestone such as `142` to find its companion, `142a`. Source code, configuration, results, and deliverables are in `code/`, `configs/`, `results/`, and `output/`, respectively. [Explore the XeSINE-Net project layout](examples/xesine-notes/)
+
+The Zotero screenshot shows the SEP Physics and Transport collection in my library. [Zotero screenshot](examples/xesine-notes/previews/zotero.png)
 
 ## Install
 
-Ask Codex:
+Send the following installation request to Codex.
 
 > Install skills/ai-native-researchers from Lee-Eee-Eee/ai-native-researchers.
 
-For a manual install, copy the entire [skills/ai-native-researchers](skills/ai-native-researchers/) directory into `~/.codex/skills/`. Open a new conversation and try:
+For a manual install, copy the entire [skills/ai-native-researchers](skills/ai-native-researchers/) directory to `~/.codex/skills/`. After installation, assign a task in a new conversation.
 
-> Use $ai-native-researchers to close out the experiment I just ran. Show me which cases distinguish the two methods, link the individual results to the milestone notes, and leave the command that rebuilds the table. Use my existing project layout.
+> Use $ai-native-researchers to close out the experiment I just ran. Keep my existing project layout, write a milestone decision, and link the case-level results and the command that builds the table.
 
-[Skill instructions](skills/ai-native-researchers/SKILL.md) · [Reproduction and handoff](skills/ai-native-researchers/references/reproduction.md)
+[Skill instructions](skills/ai-native-researchers/SKILL.md)
