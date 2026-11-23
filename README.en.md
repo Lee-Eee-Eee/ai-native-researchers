@@ -19,6 +19,10 @@
   <a href="https://github.com/Lee-Eee-Eee/ohmyplt"><img src="docs/media/tools/ohmyplt.png" width="24" height="24" align="middle" alt=""> ohmyplt for figures</a>
 </p>
 
+<p align="center">
+  <img src="docs/media/research-workflow.en.png" width="780" alt="The AI research workflow connects papers and milestone notes in Zotero and Obsidian, code and analysis in Git and Snakemake, and figures, presentations, and papers in ohmyplt, PowerPoint or Beamer, and LaTeX.">
+</p>
+
 We are standing at a historic inflection point in the production of human knowledge.
 
 For centuries, the frontier of scientific discovery was measured almost exclusively by individual intellectual endowment, human intuition, and decades of monastic labor. Generations of researchers dedicated their lives to chipping away microscopic cracks in the boundaries of the unknown. Today, under the relentless, brute-force expansion of compute and foundation models, problems that resisted resolution for generations are falling in rapid succession. This reshaping of intellectual production is breathtaking: an individual researcher is no longer shackled by the physical constraints of artisan labor. Armed with an incisive hypothesis, one can now mobilize frontier models to explore multiple technical avenues in parallel, systematically synthesizing literature, drafting execution pipelines, and iterating across experimental rounds in a matter of days. The physical latency between conceiving a scientific intuition and confronting rigorous empirical data has collapsed.
@@ -32,10 +36,6 @@ The answer is certainly not to become a complacent operator shuffling prompts. I
 Confronting this reality requires moving past abstract discourse on academic futures to govern the concrete reality on our desks. If models are to participate deeply across every facet of discovery, execution, and synthesis, our generation must build an engineering paradigm that embraces machine intelligence while keeping human judgment strictly in command: where literature remains traceable, decisions leave an auditable record, computational dependencies are deterministic, and claims are anchored to verified evidence. This is why I built **AI-Native Researchers**.
 
 The name "Model Generation" originates from two reflective essays by Jiang Yifan and Deng Geng. [Jiang Yifan's 《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [Deng Geng's 《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
-
-<p align="center">
-  <img src="docs/media/research-workflow.en.png" width="780" alt="The project home links Obsidian notes, Zotero references, Git versions, and Snakemake analysis to figures, presentations, and papers.">
-</p>
 
 ## What I use
 

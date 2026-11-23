@@ -2,7 +2,7 @@
   <img src="docs/media/tools/ai-native-researchers.png" width="88" height="88" alt="">
 </p>
 
-<h1 align="center">“模型一代”研究者</h1>
+<h1 align="center">“模型一代”科研范式</h1>
 
 <p align="center">
   <a href="README.en.md">English</a> ·
@@ -19,6 +19,10 @@
   <a href="https://github.com/Lee-Eee-Eee/ohmyplt"><img src="docs/media/tools/ohmyplt.png" width="24" height="24" align="middle" alt=""> ohmyplt 绘图</a>
 </p>
 
+<p align="center">
+  <img src="docs/media/research-workflow.png" width="780" alt="AI 科研工作流。Zotero 与 Obsidian 管理论文和研究记录，Git 与 Snakemake 管理代码和分析，ohmyplt、PowerPoint 或 Beamer、LaTeX 用于绘图、汇报和论文。">
+</p>
+
 我们正伫立在人类知识生产史上一场极为剧烈的转折点上。
 
 数百年间，科学探索的疆界几乎完全由个体的智力禀赋、直觉与漫长的岁月沉淀所丈量。一代代研究者在书斋与实验室里穷经皓首，才得以在人类认知的边界上凿开一道微小的缝隙。然而今天，在算力与大模型近乎暴力的推进面前，困扰学界数十甚至数百年的难题正在被成批叩开。这种智力生产范式的重塑是惊心动魄的——一个普通研究者不再受困于作坊式的人手短缺，只要有一个足够敏锐的假设，便可以借助前沿模型在几天内同时铺开数条技术路线，连续完成文献脉络的梳理、代码框架的搭建与多轮实验的推演。从一个科学直觉的萌发，到直面坚实、详备的实验数据，人类思考与验证之间的物理时延被空前压缩。
@@ -32,10 +36,6 @@
 想通了这一点，我没有去空谈虚妄的学术制度构想，而是回到自己桌面上最具体的方寸之地。既然模型注定要深度参与科研的每一步，我们就必须为这一代人重构一套能与机器共生、却始终由人执掌主权的科研工程范式：让文献可追溯，让决策有留痕，让依赖有约束，让成果有证据。这就是 **AI-Native Researchers** 的来由。
 
 「模型一代」的命名来自蒋一凡的《模型一代》与邓耿的《模型万代》。 [蒋一凡《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [邓耿《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
-
-<p align="center">
-  <img src="docs/media/research-workflow.png" width="780" alt="项目首页连接 Obsidian 笔记、Zotero 文献、Git 版本与 Snakemake 分析，并通向配图、汇报和论文。">
-</p>
 
 ## 我用的办法
 
