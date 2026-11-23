@@ -19,13 +19,19 @@
   <a href="https://github.com/Lee-Eee-Eee/ohmyplt"><img src="docs/media/tools/ohmyplt.png" width="24" height="24" align="middle" alt=""> ohmyplt 绘图</a>
 </p>
 
-人工智能已经开始改变科研的分工。以前一个课题能同时往几个方向做，很大程度上要看组里有多少人，谁能腾出空读文献、写程序、做实验。现在一个普通研究者也可以请模型沿着几条思路各做一轮，等看过结果，再决定精力花在哪里。从想试一试，到手里真的有结果可看，中间那段路短了不少。能在刚开始学做科研的时候碰上这场变化，我觉得很幸运。
+我们正伫立在人类知识生产史上一场极为剧烈的转折点上。
 
-我最在意的是，做研究的人得掌握自己的工作。几轮调研下来，书目和原文散在各段对话里。助手接着跑实验，改了几个条件，我想停下来判断一组新结果，就得先弄清它用过的数据和做过的对照。另开对话，我要把前面的事重新说一遍。合作者拿到代码和结果，也还得来问前几轮的决定。尤其现在可以更快地得到一批看起来不错的结果，自己就更得练会选问题、定对照，知道一份证据能说明到哪一步。
+数百年间，科学探索的疆界几乎完全由个体的智力禀赋、直觉与漫长的岁月沉淀所丈量。一代代研究者在书斋与实验室里穷经皓首，才得以在人类认知的边界上凿开一道微小的缝隙。然而今天，在算力与大模型近乎暴力的推进面前，困扰学界数十甚至数百年的难题正在被成批叩开。这种智力生产范式的重塑是惊心动魄的——一个普通研究者不再受困于作坊式的人手短缺，只要有一个足够敏锐的假设，便可以借助前沿模型在几天内同时铺开数条技术路线，连续完成文献脉络的梳理、代码框架的搭建与多轮实验的推演。从一个科学直觉的萌发，到直面坚实、详备的实验数据，人类思考与验证之间的物理时延被空前压缩。
 
-这样下去，实验室里怎么合作，研究成果怎么交给别人，都会跟着变。我先从自己每天要管的事做起，把这套办法整理成了 **AI-Native Researchers**。查过的论文进文库，实验每做一轮就留一份记录，代码和结果有各自的位置。助手往前做的时候，我能回来读进展，补判断，改下一步。合作者拿到项目，也从同一个首页接着做。这套工作流做成了一个可以安装的技能。 [研究者与助手的分工](skills/ai-native-researchers/references/model-generation.md)
+但狂飙突进的技术奇观背后，横亘着同样深刻的危机。当头部商业机构能够调动海量算力批发各个领域的论文，当几十万页机器生成的推演已彻底超出单个碳基大脑穷尽一生的阅读极限，传统以“自然人写作、同行评议、期刊载录、学术荣誉”为基石的科学共同体体系正在面临瓦解的边缘：研究者用 AI 生成论文，审稿人用 AI 审阅观点，读者再用 AI 提取摘要，科学探索的中间过程正在沦为彼此心照不宣却难以为人所读的黑箱。如果普通研究者只是在零散的对话框里被动迎合模型的节奏，我们不仅会丢掉文献的出处、遗忘前期暗中引入的假设，更会在海量看似严谨的数据幻象中，彻底丧失对科研过程的审视权与主导权。
 
-「模型一代」这个名字来自蒋一凡和邓耿的两篇文章。 [蒋一凡《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [邓耿《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
+这迫使每一个身处大变革之中的研究者直面最残酷的追问：当智力生产的体力壁垒被模型迅速填平，个体究竟凭什么立足？我们还要锤炼怎样的本领？
+
+答案绝不是去做一个麻木搬运 Prompt 的操作员，而恰恰是夺回人类理性的最高主权——是在海量结果面前辨识真伪与价值的问题定义能力，是对变量与物理对照极端严苛的哲学审视，是对反常样本抽丝剥茧的敏锐嗅觉，以及在整个探索脉络中对科学事实的完全掌控。科学绝不能沦为仅属于少数算力巨头的私有黑箱，也不应变成不可追溯的对话流垃圾。
+
+想通了这一点，我没有去空谈虚妄的学术制度构想，而是回到自己桌面上最具体的方寸之地。既然模型注定要深度参与科研的每一步，我们就必须为这一代人重构一套能与机器共生、却始终由人执掌主权的科研工程范式：让文献可追溯，让决策有留痕，让依赖有约束，让成果有证据。这就是 **AI-Native Researchers** 的来由。
+
+「模型一代」的命名来自蒋一凡的《模型一代》与邓耿的《模型万代》。 [蒋一凡《模型一代》](https://mp.weixin.qq.com/s?__biz=MzY5MzQ5NjgwNw==&mid=2247483674&idx=1&sn=facf9067217689d466efddf475190a59&chksm=f58d87e227d875dd4dbccbe0f66cb383fddcdcec95ac66a3f992d1cc87dcad1e71f021ad9d61#rd) · [邓耿《模型万代》](https://mp.weixin.qq.com/s?__biz=MzI0NjY1MDIwMQ==&mid=2247484921&idx=1&sn=ada6ae5a6af92849c49470672d803534&chksm=e8c21d1f61e9b6ccd0641eba378278df7a9cea53d2224a8ab931699635458abda2a5d1392afa#rd)
 
 <p align="center">
   <img src="docs/media/research-workflow.png" width="780" alt="项目首页连接 Obsidian 笔记、Zotero 文献、Git 版本与 Snakemake 分析，并通向配图、汇报和论文。">
@@ -33,48 +39,48 @@
 
 ## 我用的办法
 
-### <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> 文献和阅读笔记
+### <img src="docs/media/tools/zotero.png" width="22" height="22" alt=""> 文献归档与阅读锚定
 
-AI 查完一批文献，我把核对过的条目按项目和用途收进 Zotero。用到一篇文章里的方法或结果，我就在阶段笔记留个链接，顺便记上章节或图号。过一阵再写稿，沿着笔记就找得回原文。整组书目和阅读笔记也可以同步到 Obsidian。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 批注](skills/ai-native-researchers/references/literature.md)
+在多轮深度的 AI 调研中，模型引述的文献、理论渊源与图表极易湮灭在漫长的会话历史中，导致后续成文时原文无从稽考。我的做法是拒绝让文献停留在对话里：凡经核验的关键论文，即刻收录进 Zotero 专属项目分类；在研究阶段笔记中，严谨链接条目的唯一标识，并显式标注其对应的章节号、公式或图表编号。项目分类中的书目可以通过 Zotero 本地接口同步到 Obsidian，所需的 PDF 批注可以用 ZotLit 导入。无论数月后何时需要核对论据，顺着笔记链接便能瞬时穿透到一手文献的上下文。 [文献同步](skills/ai-native-researchers/references/library-sync.md) · [ZotLit 批注](skills/ai-native-researchers/references/literature.md)
 
-### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> 实验记录和下一步
+### <img src="docs/media/tools/obsidian.svg" width="22" height="22" alt=""> 阶段记录与人类决策
 
-我请助手每做完一轮就补两份 Markdown。`001` 写做过的尝试、我对结果的判断和接下来的安排，`001a` 留结果表、异常样本和运行记录。我用 Obsidian 看这两份笔记，有意见就写在这轮的记录里。下一次开对话，我让助手先读首页和最近几轮的笔记。合作者拿到项目，也能沿着同一份记录往下读。 [在 Obsidian 审阅](skills/ai-native-researchers/references/review-vault.md)
+当模型不知疲倦地推演了十数轮实验，早期引入的微小假设、超参扰动与临时切分往往会被遗忘，使研究演变为不可控的漂移。在这套工作流中，每轮实验必须沉淀为两份结构化 Markdown：`001` 作为阶段决策页，凝练记录本轮的核心探索动因、人类研究者对结果的定性判断与接下来的攻坚方向；`001a` 作为伴生证据页，忠实挂载基准对照表、反常案例剖析与可复现命令。研究者在 Obsidian 中集中审阅，将关键的怀疑与修正意见直接写在记录里。当需要另辟对话、切换模型架构或将成果移交同行时，接手的人可以先看项目首页和近期阶段记录，了解研究做到哪一步。 [在 Obsidian 审阅](skills/ai-native-researchers/references/review-vault.md)
 
-### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> 目录、版本和分析
+### <img src="docs/media/tools/git.svg" width="22" height="22" alt=""> <img src="docs/media/tools/snakemake.svg" width="22" height="22" alt=""> 科学目录规范、版本管理与分析依赖
 
-几轮分析下来，目录里会积出好几版脚本、配置和结果。我希望用到一张图时，能顺着记录查到当时的数据和代码，所以原始数据、脚本和配置、分析结果、交付稿件各有各的位置。Git 记代码、配置和笔记的版本。数据和模型权重放在外部时，运行记录要写明位置和版本。多步分析用 Snakemake 写清每步的输入和输出，改了输入再跑，受影响的结果就会跟着更新。 [项目目录](skills/ai-native-researchers/references/project-structure.md) · [运行记录](skills/ai-native-researchers/references/reproduction.md) · [Snakemake 示例](skills/ai-native-researchers/assets/snakemake-starter/)
+高频的机器推演极易在根目录下留下令人窒息的碎片文件。必须在物理结构上建立科学的边界划分：只读的原始输入（`data/`）、受严格版本控制的代码与配置文件（`code/`、`configs/`）、阶段性的中间产物与分析结果（`results/`），以及面向同行的最终交付物（`output/`）。Git 专注于管理分析逻辑与阶段笔记的演进分支；复杂的依赖计算则由 Snakemake 固化为严格的有向无环图（DAG）——更新原始输入或处理逻辑后，再运行 Snakemake，按规则和依赖更新受影响的下游结果。目录和运行记录把文件用途、输入版本和运行环境交代清楚，方便查阅和迁移。 [项目目录规范](skills/ai-native-researchers/references/project-structure.md) · [运行记录](skills/ai-native-researchers/references/reproduction.md) · [Snakemake 示例](skills/ai-native-researchers/assets/snakemake-starter/)
 
-### <img src="docs/media/tools/ohmyplt.svg" width="22" height="22" alt=""> 从结果到组会和论文
+### <img src="docs/media/tools/ohmyplt.svg" width="22" height="22" alt=""> 交付流：从阶段数据到配图、汇报与论文
 
-到了组会或正式汇报，我从阶段记录挑要讲的结果，用 ohmyplt 从结果表画图，脚本也留着。汇报用 PowerPoint 或 Beamer，论文沿用项目的 LaTeX 模板和 Zotero 书目。最后把源稿、定稿和用到的图表链接回阶段记录。等到改稿，我从这儿接着找。 [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [科研图、汇报与论文](skills/ai-native-researchers/references/research-outputs.md)
+严谨的研究决不能在潦草的草稿纸上止步，它必须优雅而真实地呈现于学术共同体面前。科研绘图采用 ohmyplt 直接读取阶段分析表，生成适合论文使用的矢量图，保留绘图脚本和数据源；组会研讨与正式答辩采用 PowerPoint（分层矢量底图搭配可编辑关键标注）或 Beamer，逻辑架构紧密依托实验测量与消融对照；最终论文排版经由 LaTeX，直接消费项目内部锁定的 Zotero 统一书目与阶段产出图表。从阶段记录链接定稿与所用图表，并写明对应的代码提交和数据版本，便于以后核对。 [ohmyplt](https://github.com/Lee-Eee-Eee/ohmyplt) · [科研图、汇报与论文交付流程](skills/ai-native-researchers/references/research-outputs.md)
 
 ## 接入已有项目
 
-手上已经做了一段时间的项目，可以先把原来的 Markdown 笔记索引出来。迁移命令会在笔记目录生成 `init.md`，比如 `docs/init.md`。在原首页加上这个索引，再补上最近的进展、结果和稿件。项目内用相对链接，别人拿到目录就能沿着首页读。外部数据另外写好访问说明。 [项目目录与迁移](skills/ai-native-researchers/references/project-structure.md)
+对于已经在推进中的既有课题，绝无需推倒重来。利用本仓库提供的迁移指令，可以一键扫描现存的 Markdown 笔记体系，并在文档目录中自动构建规范的索引视图（如 `docs/init.md`）。在原有主入口引入该索引，并顺次接入近期实验的阶段证据与交付文件，便能在不破坏原有历史的前提下赋予课题现代化秩序。项目内部坚决采用相对路径，外部海量数据集与权重模型辅以只读指南说明，项目交给合作者时，对方可以从首页查看现有记录和数据访问说明。 [项目目录与迁移](skills/ai-native-researchers/references/project-structure.md)
 
-团队可以按原有的版本管理、集群调度和归档方式接入。 [工具选择](skills/ai-native-researchers/references/tool-choices.md)
+团队可根据既有算力设施，弹性集成已有的版本控制、集群调度与冷数据归档方案。 [工具选择表](skills/ai-native-researchers/references/tool-choices.md)
 
 ## 示例项目
 
-我用 **XeSINE-Net** 的目录做了一个例子，保留了 `142` 到 `156` 的阶段编号，给演示笔记另写了标题和内容。从首页能看到当前进展、下一步和文献链接。打开阶段记录 `142` 就能找到配套的 `142a`。源码、配置、结果和交付文件分别在 `code/`、`configs/`、`results/` 和 `output/`。 [查看 XeSINE-Net 项目结构](examples/xesine-notes/)
+仓库以 **XeSINE-Net** 的实际项目目录为蓝本构建了完整的演示范例，忠实保留了从 `142/142a` 到 `156/156a` 的连续多轮阶段演进编号与项目骨架，笔记内容采用具代表性的演示文本。通过项目首页，你可以完整观察多轮探索的演化轨迹、阶段决断与外部文献的精准交织。源码、配置、结果与终稿分别归位于 `code/`、`configs/`、`results/` 与 `output/`。 [查看 XeSINE-Net 项目结构](examples/xesine-notes/)
 
-另有一张实际的 Zotero 界面，打开的是「SEP 物理与传播」分类。 [Zotero 截图](examples/xesine-notes/previews/zotero.png)
+文献管理部分展示了真实的 Zotero 文库运行状态，界面展示了实际课题中的「SEP 物理与传播」文献分类和条目列表。 [Zotero 截图](examples/xesine-notes/previews/zotero.png)
 
 ## 安装
 
-在 Codex 里可以直接发送下面这条指令。
+在 Codex 对话中可直接发送以下指令引入技能：
 
 > 请从 Lee-Eee-Eee/ai-native-researchers 安装 skills/ai-native-researchers。
 
-手动安装时，把 [skills/ai-native-researchers](skills/ai-native-researchers/) 整个子目录复制到 `~/.codex/skills/`。安装好后，可以开一个新对话，先交给助手一次实验的记录。
+若手动安装，请将 [skills/ai-native-researchers](skills/ai-native-researchers/) 目录完整复制至本机的 `~/.codex/skills/`。安装完成后，在推进完一轮实验时直接调用：
 
 > 用 $ai-native-researchers 整理刚结束的实验。沿用现有目录，写一页阶段判断，链接对应的逐例结果和生成结果表的命令。
 
-阶段收尾和迁移脚本使用 Python 标准库。本仓库用 Python 3.12 测试。运行阶段索引示例可通过 `uv` 安装示例固定的 Snakemake 版本。页首的工具按需要接入，重画流程图需要 ohmyplt、Matplotlib、Pillow 和 resvg-py。 [阶段索引示例](examples/xesine-notes/#git-与-snakemake) · [流程图脚本](docs/media/render_workflow.py)
+阶段收尾与迁移脚本均仅依赖 Python 标准库（在 Python 3.12 下完成验证）。运行示例中的数据分析依赖推荐使用 `uv` 部署固定的 Snakemake 环境。重画工作流图需要 ohmyplt、Matplotlib、Pillow 与 resvg-py。 [阶段索引示例](examples/xesine-notes/#git-与-snakemake) · [流程图脚本](docs/media/render_workflow.py)
 
 [技能正文](skills/ai-native-researchers/SKILL.md)
 
 ## 许可
 
-仓库自有代码和文档采用 Apache-2.0。第三方图标、商标及截图中的第三方内容适用各自的使用条款。 [许可证](LICENSE) · [图标来源](docs/media/tools/sources.md)
+仓库自有代码与文档采用 Apache-2.0 许可证发布。第三方工具图标、商标及截图中的第三方文献与软件界面适用各自的使用条款。 [许可证全文](LICENSE) · [图标来源说明](docs/media/tools/sources.md)
